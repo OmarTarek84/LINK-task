@@ -1,0 +1,43 @@
+<div class="back-svg">
+  <ng-container [ngSwitch]="selectedOrder">
+    <img *ngSwitchCase="1" [src]="'assets/Decore-orange.svg'" alt="image" width="822.575" height="912.383"  />
+    <img *ngSwitchCase="2" [src]="'assets/Decore-green.svg'" alt="image" width="822.575" height="912.383"  />
+    <img *ngSwitchCase="3" [src]="'assets/Decore-pink.svg'" alt="image" width="822.575" height="912.383"  />
+  </ng-container>
+</div>
+
+<section class="home-body horizontal-padding">
+
+    <div class="details">
+        <span class="category" [style.color]="categoryColor">{{bannerSlide?.category}}</span>
+        <h5 class="title">{{bannerSlide?.title}}</h5>
+        <p class="brief">{{bannerSlide?.brief}}</p>
+
+        <div class="find-more-demo">
+          <button>Find Out More</button>
+          <div class="demo">
+            <img src="assets/play_4208490.png" loading="lazy" alt="play" alt="image" />
+            <span>Play Demo</span>
+          </div>
+        </div>
+
+        <div class="carousel-toggle">
+          <ng-container *ngFor="let s of counterBannerSlidesList(); let i = index">
+
+            <span [ngClass]="{'active': selectedOrder === i + 1}"
+                  (click)="switchOrder(i + 1)">
+            </span>
+            <ng-container *ngIf="i+1 < bannerSlidesList.length">
+              .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .
+            </ng-container>
+
+          </ng-container>
+        </div>
+    </div>
+
+    <div class="image">
+      <img [src]="bannerSlide?.imgUrl" loading="lazy" alt="image" />
+    </div>
+
+
+</section>

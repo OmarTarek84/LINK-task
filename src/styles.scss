@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url('assets/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  src: url('assets/fonts/Poppins-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-Light.ttf';
+  src: url('assets/fonts/Poppins-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins-Medium';
+  src: url('assets/fonts/Poppins-Medium.ttf');
+}
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: Poppins-Regular;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.horizontal-padding {
+  padding: 0 11%;
+}

@@ -1,1 +1,47 @@
-<p>top-news works!</p>
+<section class="top-news horizontal-padding">
+
+  <h6 class="title1">Media</h6>
+  <h3 class="title2">Top News</h3>
+
+  <div class="categories">
+    <button *ngFor="let category of categories"
+            type="button"
+            (click)="switchCategory(category.id)"
+            [ngClass]="{'active': category.id === activeCategory}"
+            class="category">
+            {{category.name}}
+    </button>
+  </div>
+
+  <div class="newslist">
+
+    <div class="news" *ngFor="let news of (newsList$ | async)| slice:0:6">
+
+      <div class="image">
+        <img [src]="news.urlToImage" alt="image" loading="lazy" />
+      </div>
+
+      <h3 class="title">{{news.title}}</h3>
+
+      <div class="s">
+        <p class="date">{{news.publishedDate | date: 'full'}}</p>
+
+        <div class="category-like">
+          <span class="category">{{getCategoryName(news.categoryID)}}</span>
+          <div class="btns">
+            <span>&hearts;</span>
+            <span>&oslash;</span>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  <div class="viewallnews">
+    <button type="button">View All News</button>
+  </div>
+
+</section>

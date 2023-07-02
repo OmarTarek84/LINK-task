@@ -13,13 +13,18 @@ export class HeroComponent implements OnInit {
   bannerSlidesList: IBanner[] = [];
   selectedOrder: number = 1;
 
+  colors: string[] = [];
+
   constructor(private homeService: HomeService) {}
 
 
   ngOnInit(): void {
     this.homeService.getBannerSlides().pipe(
       first(),
-      map(slides => this.bannerSlidesList = slides)
+      map(slides => {
+        this.bannerSlidesList = slides;
+        this.colors = slides.map(s => s.colorCode);
+      })
     ).subscribe();
   }
 

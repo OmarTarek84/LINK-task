@@ -19,6 +19,9 @@
     display: flex;
     gap: 4rem;
     margin: 0 auto;
+    @media screen and (max-width: 450px) {
+      gap: 1rem;
+    }
     a {
       color: $secondary-text-grey-color;
       font-size: 1.5rem;

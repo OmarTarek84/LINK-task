@@ -38,11 +38,17 @@ html {
   @media screen and (max-width: 700px) {
     font-size: 40%;
   }
+  @media screen and (max-width: 450px) {
+    font-size: 35%;
+  }
 }
 
 .horizontal-padding {
   padding: 0 11%;
   @media screen and (max-width: 1000px) {
     padding: 0 7%;
+  }
+  @media screen and (max-width: 450px) {
+    padding: 0 3%;
   }
 }

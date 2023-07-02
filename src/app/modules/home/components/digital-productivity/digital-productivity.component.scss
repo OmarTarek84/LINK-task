@@ -16,6 +16,7 @@
     position: relative;
     @media screen and (max-width: 700px) {
       width: 100%;
+      padding: 5.7rem 0 5.7rem 0;
     }
     h2 {
       text-align: right;
@@ -26,7 +27,6 @@
       margin-left: auto;
       @media screen and (max-width: 700px) {
         text-align: center;
-        margin-left: 1rem;
         width: 100%;
       }
     }
@@ -41,7 +41,6 @@
       @media screen and (max-width: 700px) {
         text-align: center;
         width: 100%;
-        margin-left: 1rem;
       }
     }
 
@@ -63,10 +62,16 @@
         top: 0;
         left: 0;
         right: 0;
+        justify-content: center;
+        width: 100%;
+        margin-top: 2rem;
       }
        .image-column {
           display: flex;
           flex-direction: column;
+          @media screen and (max-width: 700px) {
+            flex-direction: row;
+          }
           &:first-child {
             justify-content: center;
             @media screen and (max-width: 1000px) {
@@ -74,11 +79,17 @@
               position: relative;
               bottom: 12.5rem;
             }
+            @media screen and (max-width: 700px) {
+              bottom: 0;
+            }
           }
           &:nth-child(2) {
             @media screen and (min-width: 945px) and (max-width: 1000px) {
               position: relative;
               bottom: 12.5rem;
+            }
+            @media screen and (max-width: 700px) {
+              bottom: 0;
             }
           }
           &:last-child {
@@ -87,6 +98,9 @@
             @media screen and (max-width: 1000px) {
               // bottom: 0;
               bottom: 34.5rem;
+            }
+            @media screen and (max-width: 700px) {
+              bottom: 0;
             }
           }
          .image {
